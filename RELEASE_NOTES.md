@@ -1,47 +1,56 @@
-# RELEASE_NOTES - Phiên bản v1
+# RELEASE_NOTES - Bản phát hành chính thức v3
 
 ## Thông tin phiên bản
 
-- Tên/Mã phiên bản: **Trang Trại Gà Quang Linh - v1.0.0**
-- Ngày cập nhật: **18/11/2026**
-- Nhánh: `main`
-- Commit được nộp: [`a124134c57c6eec4326bbe1b88ba80fd8978305e`](https://github.com/linhdam208-hash/trang-trai-ga/commit/a124134c57c6eec4326bbe1b88ba80fd8978305e)
+- Tên/Mã phiên bản: **Website Trang Trại Gà Quang Linh (QL FARM) - v3**
+- Phiên bản: **v3 (Bản hoàn thiện bàn giao A3)**
+- Ngày cập nhật: **2026-11-19**
+- Sinh viên: **Đàm Quang Linh - 2071020117**
+- Lớp / Ngành: **CNTT 20-04 / Công nghệ thông tin**
+- Giảng viên hướng dẫn: **ThS. Lê Thái Bảo**
+- Nhánh phát hành: `main`
 - Repository: https://github.com/linhdam208-hash/trang-trai-ga
 
-## Thay đổi chính
+## Tóm tắt nâng cấp
 
-- Hoàn thiện README mô tả sản phẩm, cấu trúc, cách chạy local, cách kiểm tra, nguồn xuất bản và minh chứng.
-- Thêm AI_LOG ghi hiện tượng ban đầu, nhận định, gợi ý AI, quyết định và cách thử lại.
-- Thêm ghi chú bàn giao cho bản phát hành đầu tiên.
-- Các tài liệu dẫn tới đúng tên tệp trong repository và commit hiện có.
+Từ `v2` sang `v3`, dự án chuyển sang giai đoạn hoàn thiện hồ sơ bàn giao A3: bổ sung `CHANGELOG.md` và `docs/evidence-index.md`, đồng bộ toàn bộ thông tin chủ sở hữu, chuẩn hóa liên kết tương đối và rà soát chéo mã nguồn với 12 tiêu chí Rubric A3.
 
-## Lỗi đã sửa
+## Tính năng hoàn thiện
 
-- README thiếu thông tin bàn giao và hướng dẫn kiểm tra thực tế.
-- Thiếu tài liệu ghi quyết định sử dụng AI.
-- Thiếu ghi chú phiên bản và hạn chế còn lại.
-- Không có thay đổi nào được thực hiện vào mã nguồn HTML/CSS trong bản tài liệu này.
+- HTML5 Semantic và cấu trúc nhiều section rõ ràng.
+- Giao diện Mobile-First, breakpoint 640px và 960px.
+- Ba sản phẩm dạng Card kèm hình ảnh có thuộc tính `alt`.
+- Bảng giá Semantic Table với tiêu đề cột và hàng.
+- Form đặt hàng có `required`, ràng buộc độ dài, `email`, `label` gắn với `id` và gửi `GET` sang `ket-qua.html`.
+- Trạng thái focus bằng `:focus-visible` cho điều hướng và form.
 
-## Giới hạn còn lại
+## Lỗi giao diện/responsive đã khắc phục
 
-- GitHub Pages chưa được xác nhận hoạt động: URL https://linhdam208-hash.github.io/trang-trai-ga/ trả HTTP 404 tại lần kiểm tra ngày 18/11/2026.
-- Form sử dụng `method="get"` và chuyển sang `ket-qua.html`; dữ liệu không được lưu hoặc gửi tới dịch vụ backend.
-- Trang kết quả không hiển thị giá trị đã nhập mà chỉ hiển thị thông báo ghi nhận chung.
-- Nội dung sản phẩm, địa chỉ và mức giá là dữ liệu hiển thị trong trang tĩnh; chưa có cơ chế quản trị hoặc cập nhật trực tiếp.
-- Chưa có file test tự động; kiểm tra hiện là checklist thủ công bằng trình duyệt.
+- Thanh điều hướng cho phép `flex-wrap: wrap`, giúp menu không cố gắng giữ thành một dòng duy nhất ở 320px.
+- Lưới Card sử dụng `repeat(..., minmax(0, 1fr))` và Card đặt `min-width: 0`.
+- Lưới quy trình/bảng giá dùng `minmax(0, 1fr)` và các khối con đặt `min-width: 0`; vùng bảng còn có cuộn ngang an toàn.
+- CSS hình ảnh dùng `max-width: 100%` và `height: auto` để tránh tràn ngang.
 
-## Cách tiếp tục kiểm tra và bàn giao
+## Hạn chế còn lại
 
-1. Tải đúng commit `a124134c57c6eec4326bbe1b88ba80fd8978305e` hoặc nhánh `main`.
-2. Làm theo [hướng dẫn chạy local trong README](README.md).
-3. Kiểm tra trang chủ, điều hướng section, hình ảnh, bảng giá, form hợp lệ/không hợp lệ và trang kết quả.
-4. Kiểm tra bố cục ở desktop và mobile.
-5. Bật GitHub Pages trong phần Settings của repository, chọn source nhánh `main` và thư mục gốc nếu chưa được cấu hình.
-6. Sau khi Pages hoạt động, kiểm tra lại URL công bố và cập nhật `README.md` nếu cấu hình Pages thực tế khác.
+- Đây là website tĩnh; không có CSDL và không có backend.
+- Form chỉ mô phỏng gửi dữ liệu bằng phương thức `GET` tới `ket-qua.html`; dữ liệu không được lưu.
+- Trang kết quả không hiển thị lại tham số đã nhập.
+- GitHub Pages chỉ hoạt động sau khi được cấu hình xuất bản nhánh `main`, thư mục `/ (root)`.
+- Chưa có bộ test tự động; phần bàn giao dùng checklist thủ công và DevTools.
 
-## Tài liệu và hồ sơ liên quan
+## Hướng dẫn kiểm tra bàn giao
 
-- [README](README.md)
-- [AI_LOG](AI_LOG.md)
-- [Hồ sơ GitHub tác giả](https://github.com/linhdam208-hash)
-- [Repository mã nguồn](https://github.com/linhdam208-hash/trang-trai-ga)
+1. Chạy `python -m http.server 8080` tại thư mục gốc.
+2. Kiểm tra `index.html`, các neo điều hướng, ba Card, bảng giá và ba ảnh.
+3. Kiểm tra form rỗng/sai/đúng bằng trình duyệt.
+4. Kiểm tra responsive tại 320px, 640px và 960px; kiểm tra Tab, focus và không tràn ngang.
+5. Kiểm tra `ket-qua.html` sau khi form hợp lệ và liên kết trở về trang chủ.
+6. Đối chiếu tại [docs/evidence-index.md](docs/evidence-index.md).
+
+## Tài liệu liên quan
+
+- [README.md](README.md)
+- [CHANGELOG.md](CHANGELOG.md)
+- [AI_LOG.md](AI_LOG.md)
+- [Bảng minh chứng A3](docs/evidence-index.md)

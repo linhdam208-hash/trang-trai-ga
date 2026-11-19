@@ -1,40 +1,39 @@
-# Trang Trại Gà Quang Linh
+# Website Trang Trại Gà Quang Linh (QL FARM)
 
-## Tác giả
+Phiên bản hoàn thiện: **v3 - Bản chốt bàn giao A3**  
+Website tĩnh giới thiệu trang trại, ba nhóm sản phẩm, quy trình chăn nuôi, bảng giá và form đặt hàng.
 
-- Tên sản phẩm: Trang Trại Gà Quang Linh
-- Tác giả/owner repository: **linhdam208-hash**
-- Hồ sơ GitHub: https://github.com/linhdam208-hash
+- Sinh viên thực hiện: **Đàm Quang Linh**
+- Mã sinh viên: **2071020117**
+- Lớp / Ngành: **CNTT 20-04 / Công nghệ thông tin**
+- Giảng viên hướng dẫn: **ThS. Lê Thái Bảo**
+- Học phần: Thiết kế Web và Triển khai Hệ thống Phần mềm (FIT4014)
 
-## Mô tả
+## 1. Thông tin sản phẩm
 
-Website giới thiệu trang trại bằng HTML/CSS tĩnh. Sản phẩm trình bày giới thiệu trại, ba nhóm sản phẩm, quy trình chăn nuôi 4 bước, bảng giá tham khảo, và form liên hệ đặt hàng. Form gửi dữ liệu bằng `GET` đến trang `ket-qua.html`; sản phẩm không lưu dữ liệu trên máy chủ.
+**Website Trang Trại Gà Quang Linh (QL FARM)** được xây dựng bằng HTML5 và CSS3, phù hợp với mục đích giới thiệu sản phẩm nông nghiệp và mô phỏng luồng đặt hàng trên website tĩnh.
 
-## Liên kết sản phẩm
+## 2. Triển khai GitHub
 
-- Repository: https://github.com/linhdam208-hash/trang-trai-ga
-- GitHub Pages dự kiến: https://linhdam208-hash.github.io/trang-trai-ga/
-- Trạng thái ngày 18/11/2026: URL Pages đã thử nhưng nhận phản hồi 404; cần bật GitHub Pages cho nhánh `main` và thư mục gốc (`/(root)`).
-- Commit bàn giao: https://github.com/linhdam208-hash/trang-trai-ga/commit/a124134c57c6eec4326bbe1b88ba80fd8978305e
+- GitHub Repository — điền URL: `https://github.com/linhdam208-hash/trang-trai-ga`
+- GitHub Pages công khai — điền URL sau khi kích hoạt: `https://linhdam208-hash.github.io/trang-trai-ga/`
+- Nguồn xuất bản: nhánh `main`, thư mục `/ (root)`
+- Phiên bản: **v3 (Bản chốt bàn giao A3)**
+- Trạng thái cấu hình Pages: kiểm tra và cập nhật thực tế trong mục Checklist trước khi nộp.
 
-## Cấu trúc thư mục
+## 3. Tính năng chính
 
-```text
-trang-trai-ga/
-├── index.html          # Trang chủ và form liên hệ
-├── ket-qua.html        # Trang thông báo sau khi form hợp lệ
-├── css/
-│   └── style.css       # Giao diện và bố cục
-├── assets/
-│   └── images/         # Hình ảnh trang trại và sản phẩm
-├── README.md           # Hướng dẫn sử dụng và kiểm tra
-├── AI_LOG.md           # Ghi lại quyết định sử dụng AI
-└── RELEASE_NOTES.md    # Ghi chú phiên bản bàn giao
-```
+- HTML5 Semantic: `header`, `nav`, `main`, `section`, `article`, `figure`, `table` và `footer`.
+- Responsive Mobile-First tại 320px, 640px và 960px.
+- Danh mục 3 sản phẩm dạng Card: gà ta thả vườn, trứng gà ta thảo dược, gà Đông Tảo.
+- Bảng giá dùng Semantic `table` với `thead`, `tbody`, `th scope` và khả năng cuộn ngang an toàn.
+- Form HTML5 hỗ trợ `required`, `minlength`, `maxlength`, `email` và gửi phương thức `GET` tới `ket-qua.html`.
+- Liên kết neo điều hướng theo từng khu vực của trang chủ.
+- Trạng thái `:focus-visible` cho liên kết, nút và trường nhập liệu.
 
-## Chạy local
+## 4. Chạy tại Local
 
-Yêu cầu: Git và Python 3 (hoặc công cụ server tĩnh tương đương).
+Yêu cầu: Git và Python 3 hoặc server tĩnh tương đương.
 
 ```powershell
 git clone https://github.com/linhdam208-hash/trang-trai-ga.git
@@ -42,26 +41,51 @@ cd trang-trai-ga
 python -m http.server 8080
 ```
 
-Mở `http://localhost:8080/index.html` trong trình duyệt. Có thể mở trực tiếp `index.html`, nhưng chạy bằng server giúp kiểm tra URL tương đối và luồng form ổn định hơn.
+Mở `http://localhost:8080/index.html`. Có thể mở trực tiếp tệp HTML nhưng server local giúp kiểm tra đường dẫn tương đối và luồng form chính xác hơn.
 
-## Cách kiểm tra chức năng chính
+## 5. Cây thư mục thực tế
 
-1. Mở trang chủ và kiểm tra thanh điều hướng dẫn đến `Giới thiệu`, `Sản phẩm`, `Quy trình`, `Bảng giá`, `Đặt hàng`.
-2. Kiểm tra ba thẻ gốc và ba ảnh trong thư mục `assets/images/` đều hiển thị.
-3. Cuộn tới `Bảng giá`, xác nhận ba dòng sản phẩm.
-4. Tại form đặt hàng:
-   - Không nhập dữ liệu rồi bấm gửi: trình duyệt phải báo trường bắt buộc.
-   - Nhập họ tên dưới 2 ký tự: trường họ tên phải không hợp lệ.
-   - Nhập email sai định dạng: trường email phải không hợp lệ.
-   - Nhập nội dung đặt hàng dưới 10 ký tự: trường nội dung phải không hợp lệ.
-   - Nhập đủ dữ liệu hợp lệ và bấm `Kiểm tra & Gửi yêu cầu`: URL chuyển sang `ket-qua.html` kèm tham số `fullname`, `email`, `message`.
-5. Kiểm tra nút `Quay về trang chủ` hoặc liên kết brand để trở lại `index.html`.
-6. Thử ở kích thước màn hình điện thoại để kiểm tra menu, lưới sản phẩm và bảng giá không bị tràn.
+```text
+trang-trai-ga/
+├── index.html
+├── ket-qua.html
+├── README.md
+├── CHANGELOG.md
+├── RELEASE_NOTES.md
+├── AI_LOG.md
+├── css/
+│   └── style.css
+├── assets/
+│   └── images/
+│       ├── ga-dong-tao.jpg
+│       ├── ga-tha-vuon.jpg
+│       ├── trang-trai.jpg
+│       └── trung-ga.jpg
+└── docs/
+    └── evidence-index.md
+```
 
-## Nguồn xuất bản
+## 6. Kiểm tra trang và chức năng
 
-- Mã nguồn: nhánh `main` trên GitHub repository nêu trên.
-- Phương thức dự kiến: GitHub Pages, xuất bản thư mục gốc của nhánh `main`.
-- Tài liệu bàn giao: `RELEASE_NOTES.md`.
-- Minh chứng mã: [commit a124134c](https://github.com/linhdam208-hash/trang-trai-ga/commit/a124134c57c6eec4326bbe1b88ba80fd8978305e).
-- Kết quả kiểm tra/hồ sơ sử dụng AI: `AI_LOG.md`.
+- Điều hướng neo: nhấp từng mục trong thanh menu và xác nhận cuộn đúng `id`.
+- Responsive: thử 320px, 640px và 960px bằng DevTools; kiểm tra menu wrap, Card và bảng không tràn.
+- Tab: dùng phím Tab và xác nhận các liên kết, nút, trường nhập có `focus-visible`.
+- Form rỗng: bỏ trống tất cả rồi gửi; trình duyệt phải báo trường bắt buộc.
+- Form sai: nhập họ tên dưới 2 ký tự, email sai định dạng hoặc nội dung dưới 10 ký tự; các trường tương ứng phải không hợp lệ.
+- Form đúng: nhập dữ liệu hợp lệ, gửi và xác nhận chuyển tới `ket-qua.html` kèm tham số `fullname`, `email`, `message`.
+- Liên kết trở lại: kiểm tra brand và nút “Quay về trang chủ” tại trang kết quả.
+
+## 7. Hồ sơ bàn giao và giới hạn kỹ thuật
+
+- [CHANGELOG.md](CHANGELOG.md)
+- [RELEASE_NOTES.md](RELEASE_NOTES.md)
+- [AI_LOG.md](AI_LOG.md)
+- [Bảng minh chứng A3](docs/evidence-index.md)
+
+Giới hạn: đây là website tĩnh; form mô phỏng luồng gửi bằng `GET` tới `ket-qua.html`, không lưu dữ liệu và không có CSDL/backend. Trang kết quả không hiển thị lại dữ liệu đã gửi.
+
+## 8. Nguồn tài nguyên và khai báo AI
+
+- Mã nguồn website: dự án cục bộ và repository GitHub nêu trên.
+- Hình ảnh: các tệp trong `assets/images/` do dự án hiện có cung cấp.
+- AI hỗ trợ: Gemini và GitHub Copilot được sử dụng để kiểm tra/rà soát tài liệu, đối chiếu mã và đề xuất nội dung. Sinh viên giữ trách nhiệm cuối cùng về tính chính xác, tự kiểm chứng trên trình duyệt/DevTools và không chèn dữ liệu nhạy cảm.

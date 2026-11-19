@@ -171,7 +171,7 @@ textarea:focus-visible {
 
 .product-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 1.5rem;
 }
 
@@ -224,8 +224,13 @@ textarea:focus-visible {
 
 .split-layout {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 2rem;
+}
+
+.process-box,
+.price-box {
+    min-width: 0;
 }
 
 .step-list {
@@ -387,7 +392,7 @@ textarea:user-invalid {
     }
 
     .split-layout {
-        grid-template-columns: 1fr 1.2fr;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
         align-items: start;
     }
 }

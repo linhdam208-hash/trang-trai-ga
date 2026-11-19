@@ -1,55 +1,52 @@
-# AI_LOG - Quyết định của sinh viên
+# AI_LOG - Nhật ký sử dụng AI
 
 ## 1. Hiện tượng và dữ kiện ban đầu
 
-- Repository đã có `index.html`, `ket-qua.html`, `css/style.css` và ảnh sản phẩm.
-- `README.md` chỉ còn một tiêu đề và hai dòng giới thiệu ngắn.
-- Repository chưa có `AI_LOG.md` và `RELEASE_NOTES.md`.
-- Website là trang tĩnh: form dùng `action="ket-qua.html"` và `method="get"`; chưa có xử lý/lưu dữ liệu phía máy chủ.
-- GitHub repository tồn tại; URL GitHub Pages dự kiến được kiểm tra trong phiên làm việc và trả HTTP 404 vào ngày 18/11/2026.
-- Commit đang bàn giao: `a124134c57c6eec4326bbe1b88ba80fd8978305e` trên nhánh `main`.
+- Dự án có `index.html`, `ket-qua.html`, `css/style.css` và thư mục `assets/images/`.
+- Mã nguồn tách HTML/CSS; form dùng `action="ket-qua.html"` và `method="get"`, không có CSDL/backend.
+- Các phiên bản thực tế: `v1` tại commit `a124134`, `v2` tại commit `90f9742` (tag `v2.0`) và trạng thái chuyển sang `v3`.
+- Trước phiên bản v3, tài liệu chưa có `CHANGELOG.md` và `docs/evidence-index.md`; README/các ghi chú cần đồng bộ chủ sở hữu và liên kết.
+- Tên chủ sở là **Đàm Quang Linh - 2071020117 - CNTT 20-04 / Công nghệ thông tin - ThS. Lê Thái Bảo**.
 
-## 2. Nhận định trước khi dùng AI
+## 2. Nhận định của sinh viên trước khi dùng AI
 
-Tài liệu bàn giao cần mô tả đúng trang có sẵn, không được suy đoán chức năng backend hoặc mô tả Pages đã hoạt động khi hiện tại chưa chứng minh được. URL, commit, cấu trúc thư mục và cách kiểm tra phải lấy trực tiếp từ repository.
+Sinh viên cần lưu giữ dữ kiện thực tế thay vì suy đoán. Cấu trúc, tên tệp và đường dẫn phải lấy từ workspace; trạng thái GitHub Pages chỉ được ghi theo kết quả kiểm chứng, không mặc định là đã hoạt động.
 
-## 3. Công cụ, prompt và phản hồi mẫu
+Với giai đoạn v3, tài liệu phải đủ cấu trúc, 100% liên kết chéo đúng tên tệp và HTML/CSS cần rà lại thuộc tính truy cập cơ bản, responsive 320px/640px/960px.
 
-- Công cụ: GitHub Copilot SDK trong VS Code, Gemini
-- Prompt của sinh viên: yêu cầu tạo/sửa `README.md`, `AI_LOG.md` và `RELEASE_NOTES.md` theo các mục nội dung; không yêu cầu thay đổi giao diện hoặc chức năng sản phẩm.
-- AI đề xuất: kiểm tra repository, xác minh remote và commit, đối chiếu `index.html`/`ket-qua.html`, ghi rõ Pages đang 404, và tạo ba tài liệu theo đúng tên tệp.
+## 3. Công cụ AI sử dụng và tóm tắt gợi ý
 
-## 4. Gợi ý của AI
+- **Gemini:** hỗ trợ giai đoạn v2 đề xuất khung nội dung README, AI_LOG và RELEASE_NOTES; sinh viên yêu cầu tóm tắt, đối chiếu repository và không sao chép hội thoại dài.
+- **GitHub Copilot SDK trong VS Code:** hỗ trợ giai đoạn v3 rà workspace, thống nhất tài liệu, tạo bảng minh chứng và ghi nhận các lỗi CSS/HTML có thể phát hiện.
 
-AI đề xuất:
+Gợi ý AI cho v3 gồm:
+- Viết README theo đúng 8 mục và tên sản phẩm “Website Trang Trại Gà Quang Linh (QL FARM)”.
+- Viết CHANGELOG theo ba mốc v1/v2/v3.
+- Dùng `minmax(0, 1fr)` và `min-width: 0` cho Grid.
+- Tạo mục minh chứng và checklist Local – Repository – GitHub Pages.
+- Kiểm tra các liên kết `href/src/action` và thuộc tính `alt`/`label`.
 
-- Trình bày `linhdam208-hash` là tác giả/owner theo dữ liệu Git và GitHub vì tên đầy đủ của sinh viên không có trong repository.
-- Liên kết trực tiếp repository, hồ sơ GitHub và commit thay cho ghi thông tin không thể xác minh.
-- Mô tả form là luồng tĩnh bằng `GET`, không tuyên bố dữ liệu được gửi hoặc lưu.
-- Ghi hạn chế Pages thay vì giả định Pages đã bật.
-- Đưa ra bộ kiểm tra có thể tự chạy local.
+## 4. Quyết định của sinh viên
 
-## 5. Quyết định của sinh viên
+- **Chấp nhận:** cấu trúc tài liệu 8 mục/6 mục, bảng minh chứng, checklist, cách kiểm tra trình duyệt và ghi rõ giới hạn website tĩnh.
+- **Chấp nhận có điều chỉnh:** gộp tên chủ sở hữu và thông tin giảng viên vào mọi tài liệu bắt buộc; giữ tên tệp thực tế thay vì dùng tên viết tắt.
+- **Chấp nhận cho mã nguồn:** bổ sung `min-width: 0` cho khối split layout và đổi `grid-template-columns` sang `minmax(0, 1fr)`, vì hai thuộc tính làm giảm nguy cơ tràn cột mà không đổi bố cục.
+- **Bác bỏ:** không cho phép AI tuyên bố backend, CSDL hoặc GitHub Pages đã hoạt động nếu không có bằng chứng trực tiếp.
+- **Bác bỏ:** không ghi commit/URL mẫu thay cho dữ kiện repository thực tế.
 
-Sinh viên chấp nhận gợi ý đối chiếu repository và ghi đúng trạng thái thực tế. Sinh viên giữ nguyên `index.html`, `ket-qua.html`, `css/style.css` và toàn bộ tài nguyên ảnh; chỉ tạo/cập nhật tài liệu. Sinh viên chọn mã phiên bản `v1.0.0` cho bản bàn giao do đây là mốc phát hành đầu tiên hiện có trong repository.
+## 5. Phần tự chỉnh sửa và kiểm chứng thực tế
 
-Quyết định không kích hoạt hoặc giả lập GitHub Pages trong tài liệu vì không có quyền cấu hình nguồn xuất bản được xác nhận ngoài repository; thay vào đó ghi URL dự kiến và trạng thái kiểm tra 404.
+Sinh viên tự chịu trách nhiệm quyết định cuối, kiểm tra workspace và đối chiếu bằng trình duyệt/DevTools:
 
-## 6. Phần sửa đã thực hiện
+- Kiểm tra ba ảnh trong `assets/images/`, đường dẫn stylesheet và hai trang HTML.
+- Xác nhận mọi thẻ `img` có `alt` và mọi trường form có `<label for>` tương ứng.
+- Xác nhận menu dùng `flex-wrap: wrap`, Grid Card dùng `minmax(0, 1fr)`, và vùng bảng có `overflow-x: auto`.
+- Rà lại form rỗng/sai/đúng: `required`, `minlength`, `maxlength` và `type="email"`.
+- Kiểm tra liên kết Markdown bằng cách đối chiếu tên tệp thực tế trong thư mục gốc và `docs/`.
+- Cập nhật CSS split layout sau khi rà soát để phòng tràn ở thiết bị hẹp.
 
-- Cập nhật `README.md` bằng mô tả sản phẩm, tác giả/owner, cấu trúc thư mục, hướng dẫn local, URL Pages, nguồn xuất bản, cách kiểm tra và liên kết minh chứng.
-- Tạo `AI_LOG.md` này để ghi hiện tượng, định hướng, gợi ý, quyết định và cách thử lại.
-- Tạo `RELEASE_NOTES.md` theo phiên bản `v1.0.0`.
-- Không sửa mã HTML, CSS hay ảnh.
+Hướng dẫn kiểm chứng trên DevTools: đặt Responsive Mode ở 320px, 640px và 960px; dùng Tab để kiểm tra focus; kiểm tra Console và Network không có lỗi tài nguyên; gửi form hợp lệ và xác nhận URL chuyển sang `ket-qua.html?fullname=...&email=...&message=...`.
 
-## 7. Cách thử lại và kết quả
+## 6. Cam kết bảo mật
 
-1. Chạy `git status` và `git log` để xác nhận nhánh `main`, remote, tác giả commit và mã commit.
-2. Kiểm tra bằng HTTP HEAD:
-   - Repository: HTTP 200.
-   - Hồ sơ GitHub: HTTP 200.
-   - URL Pages dự kiến: HTTP 404.
-3. Đối chiếu nội dung trang chủ, trang kết quả, form và CSS trực tiếp trong repository.
-4. Sau khi tài liệu được lưu, kiểm tra lại các tệp bằng git diff và URL Markdown của commit.
-
-Kết quả: tài liệu đã được viết theo trạng thái thực tế của sản phẩm và commit hiện có. Chức năng website không thay đổi trong phiên làm việc này; việc Pages hiển thị vẫn phụ thuộc cấu hình GitHub Pages trên repository.
+Hồ sơ không chứa token, mật khẩu, khóa API, cookie hoặc dữ liệu đăng nhập nhạy cảm. Sinh viên cam kết không đưa thông tin cá nhân bí mật hoặc bí mật repository vào mã nguồn và tài liệu bàn giao.
